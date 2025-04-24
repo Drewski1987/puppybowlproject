@@ -12,6 +12,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.playersContainer {
+border-style: double;
+grid-column: auto;
+background-color: lightcoral;
+}
+.filteredContainer {
+  border-style: groove;
+  padding-top: 90px;
+  background-color: khaki;
+}
 
 a {
   font-weight: 500;
