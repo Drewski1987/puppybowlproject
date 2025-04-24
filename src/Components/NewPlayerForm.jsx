@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { addPlayer } from '../API/index.js'
 
 
@@ -8,7 +8,7 @@ import { addPlayer } from '../API/index.js'
         const [name, setName] = useState("")
         const [breed, setBreed] = useState("")
         const [status, setStatus] = useState("")
-        const [imageUrl, setImageUrl] = useState("")
+        const [image, setImage] = useState("")
         const [successMessage, setSuccessMessage]= useState("")
         
         
@@ -19,10 +19,10 @@ import { addPlayer } from '../API/index.js'
             console.log(name)   
             const response = await addPlayer ({
 
-                setName,
-                setBreed,
-                setStatus,
-                setImageUrl,
+                name,
+                breed,
+                status,
+                image,
             })
             console.log(response)
                 if (response.success === true) setSuccessMessage("Player Created")
@@ -30,10 +30,11 @@ import { addPlayer } from '../API/index.js'
             newPlayer()
         }
             
+      
     
     return (
         
-         <div className = "newplayerForm" >
+         <div >
             <h2><strong>Create Your Own Puppy</strong></h2>
             <form onSubmit = {handleSubmit}>
             <label>
@@ -74,8 +75,8 @@ import { addPlayer } from '../API/index.js'
                 <input 
                 type = "text"
                 required
-                value = {imageUrl}
-                onChange={(event) => setImageUrl(event.target.value)}
+                value = {image}
+                onChange={(event) => setImage(event.target.value)}
                 
                 />
             </label>

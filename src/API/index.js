@@ -55,11 +55,11 @@ export async function addPlayer({
 
 export async function removePlayer(id){
 try{
-    const res = await fetch (`${API_URL}/${id}`, {
+    const response = await fetch (`${API_URL}/${id}`, {
         method: "DELETE",
     });
-    const result = await response.json();
-    return result;
+    const res = await response.json();
+    return res;
 
 } catch (error) {
   console.error("Error deleting player:", error);

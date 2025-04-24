@@ -47,7 +47,7 @@ return(
       <div className="filteredContainer">
         {filteredPlayers.map((player) => (
           <div key={player.id} >
-            <img src={player.imageUrl} alt={player.name} />
+            <img src={player.imageUrl}  />
             <h2>{player.name}</h2>
             <p><strong>Breed:</strong> {player.breed}</p>
             <p><strong>Status:</strong> {player.status}</p>

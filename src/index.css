@@ -12,12 +12,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.singleplayercard{
+  background-color: khaki;
+}
 .playersContainer {
 border-style: double;
 grid-column: auto;
 background-color: lightcoral;
+
 }
+h2 {
+  border-style: solid;
+  border-start-end-radius: 155%;
+  border-end-start-radius: 155%;
+}
+
 .filteredContainer {
   border-style: groove;
   padding-top: 90px;
@@ -76,4 +85,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+h1{
+  background-color: lightcoral;
 }

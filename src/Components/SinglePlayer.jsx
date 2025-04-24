@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {fetchSinglePlayer} from '../API/index.js';
+import {fetchSinglePlayer, removePlayer} from '../API/index.js';
 import {useParams,  Link} from 'react-router-dom';
 
 
@@ -18,6 +18,10 @@ function SinglePlayer ({}) {
             getPlayerDetails()
         }, [])
     
+        async function removePuppy(id) {
+            const response = await removePlayer(id)
+            console.log(response)
+        }
         
     if (!player) {
         return (
@@ -31,12 +35,15 @@ function SinglePlayer ({}) {
     
     return (
         <>
-         <div >
+         <div className='singleplayercard' >
       <img src={player.imageUrl} alt={player.name} />
       <h2>{player.name}</h2>
       <p><strong>Breed:</strong> {player.breed}</p>
       <p><strong>Status:</strong> {player.status}</p>
       <p><strong>Team:</strong> {player.team?.name || "No team"}</p>
+      <br />
+      <button onClick={() => removePuppy(player.id)}>Delete Player</button>
+      <br />
       <Link to="/">← Back to Players</Link>
     </div>
          
