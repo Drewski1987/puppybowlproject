@@ -4,7 +4,7 @@ import AllPlayers from "./AllPlayers";
 import { Routes, Route } from "react-router-dom";
 
 
-export default function MainSection({}){
+export default function Home({}){
     return (
         <>
         <Routes>

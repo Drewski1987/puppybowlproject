@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { fetchAllPlayers } from '../API/index.js';
-import { useNavigate} from 'react-router-dom';
 import NewPlayerForm from './NewPlayerForm.jsx';
 import { Link } from 'react-router-dom';
 
@@ -9,10 +8,10 @@ function AllPlayers () {
 const [players, setPlayers] = useState([])
 const [searchPlayer, setSearchPlayer] = useState("")
 
-const navigate = useNavigate()
-// const handleClick = (player) => {
-//     navigate(`/single/${player.id}`)
-// }
+
+
+
+
 
 useEffect(()=> {
     const getPlayers = async() => {
@@ -27,6 +26,7 @@ useEffect(()=> {
 const filteredPlayers = players.filter((player)=>
     player.name.toLowerCase().includes(searchPlayer.toLowerCase())
 )
+
 
 return(
 
